@@ -1,0 +1,9 @@
+<resources>
+  <string name="app_name">Behavior</string>
+  <string name="behavior_offset">zeno.name.behavior.OffsetBehavior</string>
+  <string name="behavior_offset_dependency">offset_dependency</string>
+
+  <string name="behavior_nested_scroll">zeno.name.behavior.NestedScrollBehavior</string>
+  <string name="behavior_fab">zeno.name.behavior.FabBehavior</string>
+  <string name="behavior_hide_head">zeno.name.behavior.HideHeadBehavior</string>
+</resources>

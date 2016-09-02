@@ -21,6 +21,10 @@
     </activity>
     <activity android:name=".HideHeadActivity">
     </activity>
+    <activity android:name=".BottomSheetActivity">
+    </activity>
+    <activity android:name=".OffsetActivity">
+    </activity>
   </application>
 
 </manifest>

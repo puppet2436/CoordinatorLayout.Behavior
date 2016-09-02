@@ -6,4 +6,5 @@
   <string name="behavior_nested_scroll">zeno.name.behavior.NestedScrollBehavior</string>
   <string name="behavior_fab">zeno.name.behavior.FabBehavior</string>
   <string name="behavior_hide_head">zeno.name.behavior.HideHeadBehavior</string>
+  <string name="behavior_hide_footer">zeno.name.behavior.HideFooterBehavior</string>
 </resources>

@@ -6,6 +6,7 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 /**
@@ -14,7 +15,9 @@ import android.view.View;
  */
 public class FabBehavior extends CoordinatorLayout.Behavior<FloatingActionButton>
 {
+  private static final String TAG = "FabBehavior";
   int degree = 0;
+  int originH;
 
   public FabBehavior()
   {
@@ -28,15 +31,22 @@ public class FabBehavior extends CoordinatorLayout.Behavior<FloatingActionButton
   @Override
   public boolean layoutDependsOn(CoordinatorLayout parent, FloatingActionButton child, View dependency)
   {
-    return dependency instanceof AppBarLayout;
+    if (dependency instanceof AppBarLayout) {
+      originH = dependency.getMeasuredHeight() - ViewCompat.getMinimumHeight(dependency);
+      return true;
+    }
+
+    return false;
+
+
   }
 
   @Override
   public boolean onDependentViewChanged(CoordinatorLayout parent, FloatingActionButton child, View dependency)
   {
     degree += 10;
-    ViewCompat.setRotation(child, degree);
-    return super.onDependentViewChanged(parent, child, dependency);
+    ViewCompat.setRotation(child, (float) dependency.getBottom() / originH * 360);
+    return false;
   }
 
 }

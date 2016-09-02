@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    >
+
+
+    <Button
+      android:id="@+id/btn_toggle"
+      style="@style/button"
+      android:layout_marginTop="16dp"
+      android:text="sheet 显示/隐藏"
+      />
+
+    <Button
+      android:id="@+id/btn_toggle_dialog"
+      style="@style/button"
+      android:text="dialog 显示/隐藏"
+      />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/tab_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/holo_purple"
+    android:divider="@drawable/divider"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    app:behavior_peekHeight="48dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    >
+
+    <Button
+      style="@style/button"
+      android:text="第一"
+      />
+
+    <Button
+      style="@style/button"
+      android:text="第二"
+      />
+
+    <Button
+      style="@style/button"
+      android:text="第三"
+      />
+
+    <Button
+      style="@style/button"
+      android:text="第四"
+      />
+  </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

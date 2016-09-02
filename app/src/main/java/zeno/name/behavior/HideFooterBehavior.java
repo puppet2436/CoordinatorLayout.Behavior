@@ -2,45 +2,23 @@ package zeno.name.behavior;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;
-import android.support.v4.view.NestedScrollingChild;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 
 /**
  * @author 陈治谋 (513500085@qq.com)
  * @since 16/8/17
  */
-public class HideHeadBehavior extends VerticalScrollingBehavior
+@SuppressWarnings("unused")
+public class HideFooterBehavior extends VerticalScrollingBehavior
 {
-  private static final String TAG = "HideHeadBehavior";
-
   private ViewPropertyAnimatorCompat anim;
   private boolean hide = false;
 
-  public HideHeadBehavior()
-  {
-  }
-
-  @Override public boolean onLayoutChild(CoordinatorLayout parent, View child, int layoutDirection)
-  {
-    int count = parent.getChildCount();
-    for (int i = 0; i < count; i++) {
-      View c = parent.getChildAt(i);
-      if (c instanceof NestedScrollingChild) {
-        c.setPadding(c.getPaddingLeft(), child.getMeasuredHeight(), c.getPaddingRight(), c.getPaddingBottom());
-        ((ViewGroup) c).setClipToPadding(false);
-        break;
-      }
-    }
-    return super.onLayoutChild(parent, child, layoutDirection);
-  }
-
-  public HideHeadBehavior(Context context, AttributeSet attrs)
+  public HideFooterBehavior(Context context, AttributeSet attrs)
   {
     super(context, attrs);
   }
@@ -58,7 +36,7 @@ public class HideHeadBehavior extends VerticalScrollingBehavior
     return true;
   }
 
-  private void showOrHideView(View view, View target, @ScrollDirection int direction)
+  private void showOrHideView(View child, View target, @ScrollDirection int direction)
   {
     boolean willHide = direction == ScrollDirection.SCROLL_DIRECTION_UP;
     if (this.hide == willHide) return;
@@ -66,16 +44,13 @@ public class HideHeadBehavior extends VerticalScrollingBehavior
     this.hide = willHide;
 
     if (anim == null) {
-      anim = ViewCompat.animate(view);
+      anim = ViewCompat.animate(child);
       anim.setDuration(300);
       anim.setInterpolator(new LinearOutSlowInInterpolator());
     } else {
       anim.cancel();
     }
-    anim.translationY(this.hide ? -view.getMeasuredHeight() : 0).start();
-
-    int pt = direction == ScrollDirection.SCROLL_DIRECTION_UP ? -view.getMeasuredHeight() : view.getMeasuredHeight();
-    target.setPadding(target.getPaddingLeft(), pt, target.getPaddingRight(), target.getPaddingBottom());
+    anim.translationY(direction == ScrollDirection.SCROLL_DIRECTION_UP ? child.getMeasuredHeight() : 0).start();
   }
 
 }

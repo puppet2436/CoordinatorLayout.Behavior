@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  >
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#435353"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#25b6b6"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#0d5b5b"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#4f964d"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#89d7d7"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#9a769f"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#c193c4"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#7facac"
+      />
+
+    <View
+      android:layout_width="match_parent"
+      android:layout_height="144dp"
+      android:background="#245656"
+      />
+  </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

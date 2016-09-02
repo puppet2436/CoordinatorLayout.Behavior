@@ -14,7 +14,6 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity
 {
 
-  @BindView(R.id.tv1) TextView tv1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState)
@@ -22,12 +21,6 @@ public class MainActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-  }
-
-  @OnClick(R.id.tv1) public void onClickText(View v)
-  {
-    //每次点击向下移动50
-    ViewCompat.offsetTopAndBottom(v, 50);
   }
 
   @OnClick(R.id.btn_nested_scroll) public void onClickNestedScroll()
@@ -43,6 +36,16 @@ public class MainActivity extends AppCompatActivity
   @OnClick(R.id.btn_hide_head) public void onClickHideHead()
   {
     startActivity(new Intent(this, HideHeadActivity.class));
+  }
+
+  @OnClick(R.id.btn_offset) public void onClickOffset()
+  {
+    startActivity(new Intent(this, OffsetActivity.class));
+  }
+
+  @OnClick(R.id.btn_bottom_sheet) public void onClickBottomSheet()
+  {
+    startActivity(new Intent(this, BottomSheetActivity.class));
   }
 
 }
